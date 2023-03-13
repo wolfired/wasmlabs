@@ -8,7 +8,16 @@ rustc --crate-type cdylib --edition 2021 --target wasm32-unknown-unknown --out-d
 
 ```
 
-# Debug
+# Build adn Run
+
+```bash
+
+cargo build --bin wasm_bin_reader
+cargo run --bin wasm_bin_reader
+
+```
+
+# Debug with gdb
 
 ```bash
 
