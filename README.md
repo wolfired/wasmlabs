@@ -8,7 +8,7 @@ rustc --crate-type cdylib --edition 2021 --target wasm32-unknown-unknown --out-d
 
 ```
 
-# Build adn Run
+# Build and Run
 
 ```bash
 
