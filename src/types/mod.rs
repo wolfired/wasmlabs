@@ -4,9 +4,6 @@ pub use byte::Byte;
 mod data;
 pub use data::Data;
 
-mod export;
-pub use export::Export;
-
 mod expr;
 pub use expr::Expr;
 

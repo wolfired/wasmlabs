@@ -38,8 +38,8 @@ impl<T: Display + Scan> Scan for Vector<T> {
     where
         Self: Sized,
     {
-        let n = uleb_decode(cursor)?;
         Ok(Vector({
+            let n = uleb_decode(cursor)?;
             let mut ts = Vec::new();
             for _ in 0..n {
                 ts.push(T::scan(cursor)?);

@@ -17,7 +17,7 @@ pub struct Global {
 
 impl Display for Global {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "{{gt: {}, e: {}}}", self.gt, self.e)
+        write!(f, "{{gt: {}, e: {}}}", &self.gt, &self.e)
     }
 }
 
@@ -35,15 +35,14 @@ impl Scan for Global {
 
 pub struct GlobalSec {
     id: ID,
-    gbs: Vector<Global>,
+    globs: Vector<Global>,
 }
 
 impl Display for GlobalSec {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "    {} {{\n", self.id)?;
-        write!(f, "      gbs({}): [\n", self.gbs.len())?;
-        for gb in self.gbs.iter() {
-            write!(f, "        {},\n", gb)?
+        for (i, glob) in self.globs.iter().enumerate() {
+            write!(f, "      {}: {},\n", i, &glob)?
         }
         write!(f, "    }},\n")
     }
@@ -55,7 +54,7 @@ impl GlobalSec {
         uleb_decode(cursor)?;
         Ok(Self {
             id,
-            gbs: Vector::scan(cursor)?,
+            globs: Vector::scan(cursor)?,
         })
     }
 }

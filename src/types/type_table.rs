@@ -15,7 +15,7 @@ pub struct TableType {
 
 impl Display for TableType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "{{lim: {}, et: {}}}", self.lim, self.et)
+        write!(f, "{{lim: {}, et: {}}}", &self.lim, &self.et)
     }
 }
 

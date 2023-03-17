@@ -13,7 +13,7 @@ pub struct MemType {
 
 impl Display for MemType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "{{lim: {}}}", self.lim)
+        write!(f, "{{lim: {}}}", &self.lim)
     }
 }
 

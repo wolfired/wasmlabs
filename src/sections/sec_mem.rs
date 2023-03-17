@@ -18,7 +18,7 @@ impl Display for MemSec {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "    {} {{\n", self.id)?;
         for (i, mem) in self.mems.iter().enumerate() {
-            write!(f, "      {}: {},\n", i, mem)?
+            write!(f, "      {}: {},\n", i, &mem)?
         }
         write!(f, "    }},\n")
     }

@@ -14,7 +14,7 @@ pub struct FuncType {
 
 impl Display for FuncType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "{{rt1: {}, rt2: {}}}", self.rt1, self.rt2)
+        write!(f, "{{rt1: {}, rt2: {}}}", &self.rt1, &self.rt2)
     }
 }
 

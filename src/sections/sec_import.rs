@@ -61,7 +61,7 @@ impl Display for Import {
         write!(
             f,
             "{{mod: {}, nm: {}, d: {}}}",
-            self.module, self.nm, self.d
+            &self.module, &self.nm, &self.d
         )
     }
 }
@@ -88,7 +88,7 @@ impl Display for ImportSec {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "    {} {{\n", self.id)?;
         for (i, im) in self.ims.iter().enumerate() {
-            write!(f, "      {}: {},\n", i, im)?
+            write!(f, "      {}: {},\n", i, &im)?
         }
         write!(f, "    }},\n")
     }

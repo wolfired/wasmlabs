@@ -18,7 +18,7 @@ impl Display for TableSec {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "    {} {{\n", self.id)?;
         for (i, tab) in self.tabs.iter().enumerate() {
-            write!(f, "      {}: {},\n", i, tab)?
+            write!(f, "      {}: {},\n", i, &tab)?
         }
         write!(f, "    }},\n")
     }

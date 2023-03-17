@@ -15,9 +15,7 @@ pub struct StartSec {
 
 impl Display for StartSec {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "    {} {{", self.id)?;
-        write!(f, "x: {}", self.x)?;
-        write!(f, "    }},\n")
+        write!(f, "    {} {{{}}}\n", self.id, &self.x)
     }
 }
 

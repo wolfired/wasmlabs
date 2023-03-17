@@ -18,13 +18,16 @@ impl Scan for Expr {
     where
         Self: Sized,
     {
+        println!("");
         let mut byte = [0; 1];
         loop {
             cursor.read_exact(&mut byte)?;
-            if 0x0B == byte[0] {
+            print!("{:#04x} ", byte[0]);
+            if [0x0B] == byte {
                 break;
             }
         }
+        println!("");
         Ok(Self {})
     }
 }

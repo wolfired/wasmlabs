@@ -18,7 +18,7 @@ impl Display for TypeSec {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "    {} {{\n", self.id)?;
         for (i, ft) in self.fts.iter().enumerate() {
-            write!(f, "      {}: {},\n", i, ft)?
+            write!(f, "      {}: {},\n", i, &ft)?
         }
         write!(f, "    }},\n")
     }

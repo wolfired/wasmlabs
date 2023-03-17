@@ -19,7 +19,7 @@ pub struct Data {
 
 impl Display for Data {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "{{mode: {} }}", self.mode)
+        write!(f, "{{mode: {}}}", &self.mode)
     }
 }
 

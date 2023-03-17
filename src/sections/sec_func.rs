@@ -17,7 +17,7 @@ impl Display for FuncSec {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "    {} {{\n", self.id)?;
         for (i, x) in self.xes.iter().enumerate() {
-            write!(f, "      {}: {},\n", i, x)?
+            write!(f, "      {}: {},\n", i, &x)?
         }
         write!(f, "    }},\n")
     }

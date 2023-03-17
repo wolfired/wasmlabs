@@ -9,6 +9,10 @@ use crate::utils::uleb_decode;
 
 use super::ID;
 
+pub enum Elem {
+    
+}
+
 pub struct ElemSec {
     id: ID,
 }
