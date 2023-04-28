@@ -38,5 +38,9 @@ cargo run --bin wasm_bin_reader
 add-auto-load-safe-path ~/.rustup/toolchains
 dir ~/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/etc
 
+# within gdb, can not find rust std source
+# the hash string: rustc -Vv | grep -oP '[0-9a-f]{40}'
+set substitute-path /rustc/7f94b314cead7059a71a265a8b64905ef2511796 /home/link/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust
+
 ``
 
